@@ -1,3 +1,5 @@
+import string
+
 class Category:
 
     def __init__(self, name):
@@ -36,8 +38,27 @@ class Category:
         else:
             return True
     
-    # def __str__(self):
-    #     pass
+    def __str__(self):
+        num_stars = 30 - len(self.name)
+        title = ""
+        transaction = ""
+        total = 0
+
+        for i in range(num_stars//2):
+            title += "*"
+        title += self.name
+        for i in range(num_stars//2):
+            title += "*"
+        
+        for item in self.ledger:
+            # transaction_description += str(item["description"]) + "\t"
+            # transaction_amount += str(item["amount"]) + "\n"
+            transaction += f"{item['description'][0:23]:23}" + f"{item['amount']:>7.2f}" + '\n'
+
+            total += item["amount"]
+
+
+        return title + "\n" + transaction + "Total: " + str(total)
     
 
 
