@@ -90,11 +90,11 @@ def create_spend_chart(categories):
             if total * 100 >= i:
                 cat_spaces += "o  "
             else:
-                cat_spaces = "   "
+                cat_spaces += "   "
         res += str(i).rjust(3) + "|" + cat_spaces + ("\n")
         i -= 10
 
-    dashes = "-" + "---" * len(categories)
+    dashes = "-" + "---"*len(categories)
     names = []
     x_axis = ""
     for category in categories:
@@ -103,7 +103,7 @@ def create_spend_chart(categories):
     maxi = max(names, key = len)
 
     for x in range(len(maxi)):
-        nameStr = "      "
+        nameStr = "     "
         for name in names:
             if x >= len(name):
                 nameStr += "   "
@@ -115,6 +115,6 @@ def create_spend_chart(categories):
 
         x_axis += nameStr
     
-    res += dashes.rjust(len(dashes)+4) + "\n" + x_axis
+    res += dashes.rjust(len(dashes) + 4) + "\n" + x_axis
 
     return res
