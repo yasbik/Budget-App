@@ -58,12 +58,12 @@ class Category:
 
         return title + "\n" + transaction + "Total: " + str(total)
     
-def get_withdrawals(self):
-    total = 0
-    for item in self.ledger:
-        if item["amount"] < 0:
-            total += item["amount"]
-    return total
+    def get_withdrawals(self):
+        total = 0
+        for item in self.ledger:
+            if item["amount"] < 0:
+                total += item["amount"]
+        return total
 
 def truncate(n):
     multiplier = 10
@@ -103,12 +103,12 @@ def create_spend_chart(categories):
     maxi = max(names, key = len)
 
     for x in range(len(maxi)):
-        nameStr = "     "
+        nameStr = "      "
         for name in names:
             if x >= len(name):
                 nameStr += "   "
             else:
-                nameStr += name[x] + "   "
+                nameStr += name[x] + "  "
         
         if(x != len(maxi) - 1):
             nameStr += "\n"
