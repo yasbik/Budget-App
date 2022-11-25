@@ -17,21 +17,21 @@ class Category:
     def get_balance(self):
         total = 0
         for transaction in self.ledger:
-            total += transaction.split(" ")[1]
+            total += transaction["amount"]
         return total
     
-    def transfer(self, amount, to):
+    def transfer(self, amount, destination):
         if self.check_funds(amount):
-            transfer_to = "Transfer to " + to.name
+            transfer_to = "Transfer to " + destination.name
             transfer_from = "Transfer from " + self.name
-            self.ledger.withdraw(amount, transfer_to)
-            to.deposit(amount, transfer_from)
+            self.withdraw(amount, transfer_to)
+            destination.deposit(amount, transfer_from)
             return True
         else:
             return False
     
     def check_funds(self, amount):
-        if self.get_balance < amount:
+        if self.get_balance() < amount:
             return False
         else:
             return True
