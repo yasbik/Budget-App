@@ -13,8 +13,28 @@ Each category represents a type of expense. An example of the output for a `Food
 
  The user can depost funds into each category, withdraw funds from them, or even transfer money between different categories.
 
+ Additionally, the program also prints a graph of the percentage spent on each category. A sample output of three categories, such as `Food`, `Clothing`, and `Auto`,  would look like:
 
+    Percentage spent by category
+    100|          
+     90|          
+     80|          
+     70|          
+     60| o        
+     50| o        
+     40| o        
+     30| o        
+     20| o  o     
+     10| o  o  o  
+      0| o  o  o  
+        ----------
+        F  C  A  
+        o  l  u  
+        o  o  t  
+        d  t  o  
+           h     
+           i     
+           n     
+           g     
 
-
-
-This is the boilerplate for the Budget App project. Instructions for building your project can be found at https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/budget-app
+Additional details for the project can be found [here](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/budget-app).
